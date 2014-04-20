@@ -1,0 +1,6 @@
+# vim: filetype=sh
+#
+# ~/.bash_profile
+#
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc

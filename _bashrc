@@ -1,0 +1,36 @@
+# vim: filetype=sh
+
+# Test for an interactive shell.  There is no need to set anything
+# past this point for scp and rcp, and it's important to refrain from
+# outputting anything in those cases.
+if [[ $- != *i* ]] ; then
+	# Shell is non-interactive.  Be done now!
+	return
+fi
+
+# Put your fun stuff here.
+
+# 履歴に重複行を入れない
+export HISTCONTROL=ignoredups:ignorespace
+
+# プロンプトに色を付ける
+# Custom bash prompt via kirsle.net/wizards/ps1.html
+if [[ $EUID == 0 ]]; then
+    export PS1="\\[$(tput bold)\\]\\[$(tput setaf 1)\\]\\u@\\h\\[$(tput setaf 7)\\]:\\[$(tput setaf 4)\\]\\W\\[$(tput setaf 7)\\]\\$ \\[$(tput sgr0)\\]"
+else
+    export PS1="\\[$(tput bold)\\]\\[$(tput setaf 2)\\]\\u@\\h\\[$(tput setaf 7)\\]:\\[$(tput setaf 4)\\]\\W\\[$(tput setaf 7)\\]\\$ \\[$(tput sgr0)\\]"
+fi
+
+# コマンドの色のサポートを有効にする
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# ls のエイリアス
+alias ll='ls -AlF'
+alias la='ls -A'
+alias l='ls -ACF'
+
+# 英語の man のエイリアス
+alias eman='env LANG=C LC_ALL=C man'
