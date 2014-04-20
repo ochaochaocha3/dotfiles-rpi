@@ -19,8 +19,8 @@ Raspberry Pi 上の Arch Linux 用 dotfiles。対象プログラムは
     ```bash
     cd /path/to/dotfiles-rpi
     for f in _*; do
-        fdot=`echo $f | sed -e 's/^_/.'`
-        ln -s `pwd`/$f ~/$fdot
+        fdot=`echo $f | sed -e 's/^_/./'`
+        ln -sf `pwd`/$f ~/$fdot
     done
     ```
 
