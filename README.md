@@ -14,7 +14,13 @@ Raspberry Pi 上の Arch Linux 用 dotfiles。対象プログラムは
 環境移行時に行うこと
 --------------------
 
-1. 以下を実行して、ホームディレクトリに dotfiles へのシンボリックリンクを配置する。
+1. サブモジュールを更新する。
+    
+    ```bash
+    git submodule update --init
+    ```
+
+2. 以下を実行して、ホームディレクトリに dotfiles へのシンボリックリンクを配置する。
     
     ```bash
     cd /path/to/dotfiles-rpi
@@ -24,14 +30,14 @@ Raspberry Pi 上の Arch Linux 用 dotfiles。対象プログラムは
     done
     ```
 
-2. .gitconfig の設定。gitconfig.sh を `FIXME` の指示通りに修正して、実行する。
+3. .gitconfig の設定。gitconfig.sh を `FIXME` の指示通りに修正して、実行する。
     
     ```bash
     # clone したディレクトリで
     ./gitconfig.sh
     ```
 
-3. Vim の設定。
+4. Vim の設定。
 
     1. Vim を起動して `NeoBundleInstall` を実行させる。
     2. vimproc の設定。以下を実行する。
