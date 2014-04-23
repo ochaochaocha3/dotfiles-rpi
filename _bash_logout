@@ -1,0 +1,4 @@
+# vim: filetype=sh
+# ~/.bash_logout
+
+ssh-agent -k
