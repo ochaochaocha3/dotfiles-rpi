@@ -15,30 +15,26 @@ Raspberry Pi 上の Arch Linux 用 dotfiles。対象プログラムは
 --------------------
 
 1. サブモジュールを更新する。
-    
-    ```bash
-    git submodule update --init
-    ```
 
-2. 以下を実行して、ホームディレクトリに dotfiles へのシンボリックリンクを配置する。
-    
     ```bash
     cd /path/to/dotfiles-rpi
+    git submodule update --init
+    ```
+2. 以下を実行して、ホームディレクトリに dotfiles へのシンボリックリンクを配置する。
+
+    ```bash
     for f in _*; do
-        fdot=`echo $f | sed -e 's/^_/./'`
-        ln -sf `pwd`/$f ~/$fdot
+        ln -sf `pwd`/$f ~/${f/_/.}
     done
     ```
-
 3. .gitconfig の設定。gitconfig.sh を `FIXME` の指示通りに修正して、実行する。
-    
+
     ```bash
-    # clone したディレクトリで
+    vim gitconfig.sh # 編集
     ./gitconfig.sh
     ```
 
 4. Vim の設定。
-
     1. Vim を起動して `NeoBundleInstall` を実行させる。
     2. vimproc の設定。以下を実行する。
 
