@@ -1,5 +1,45 @@
 " vim: filetype=vim
 
+" neobundle.vim によるプラグイン管理
+if has('vim_starting')
+    set nocompatible " Be iMproved
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
+NeoBundle 'Shougo/vimproc'
+
+NeoBundle 'sudo.vim'
+
+NeoBundle 'othree/eregex.vim'
+nnoremap / :M/
+nnoremap ? :M?
+nnoremap ,/ /
+nnoremap ,? ?
+
+NeoBundle 'thinca/vim-qfreplace'
+
+NeoBundle 'desert256.vim'
+colorscheme desert256
+
+NeoBundle 'othree/html5.vim'
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'JavaScript-syntax'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'vim-scripts/mediawiki.vim'
+
+filetype plugin indent on " Required!
+
+" Installation check.
+NeoBundleCheck
+
+" ここまで：neobundle.vim によるプラグイン管理
+
 " タブ・インデント
 set tabstop=4
 set softtabstop=4
@@ -46,43 +86,3 @@ function! s:CDToFileDir()
     lcd %:p:h
     pwd
 endfunction
-
-" neobundle.vim によるプラグイン管理
-if has('vim_starting')
-    set nocompatible " Be iMproved
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-call neobundle#rc(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
-NeoBundle 'Shougo/vimproc'
-
-NeoBundle 'sudo.vim'
-
-NeoBundle 'othree/eregex.vim'
-nnoremap / :M/
-nnoremap ? :M?
-nnoremap ,/ /
-nnoremap ,? ?
-
-NeoBundle 'thinca/vim-qfreplace'
-
-NeoBundle 'desert256.vim'
-colorscheme desert256
-
-NeoBundle 'othree/html5.vim'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'JavaScript-syntax'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'vim-scripts/mediawiki.vim'
-
-filetype plugin indent on " Required!
-
-" Installation check.
-NeoBundleCheck
-
-" ここまで：neobundle.vim によるプラグイン管理
