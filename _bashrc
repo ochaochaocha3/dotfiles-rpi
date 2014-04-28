@@ -38,3 +38,6 @@ alias l='ls -ACF'
 
 # 英語の man のエイリアス
 alias eman='env LANG=C LC_ALL=C man'
+
+# パス設定
+export PATH="$HOME/bin:$PATH"
