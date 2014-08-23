@@ -39,6 +39,8 @@ alias l='ls -ACF'
 # 英語の man のエイリアス
 alias eman='env LANG=C LC_ALL=C man'
 
+# rbenv$
+eval "$(rbenv init -)"$
 alias be='bundle exec'
 
 # パス設定
