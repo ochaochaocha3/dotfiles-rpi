@@ -40,7 +40,7 @@ alias l='ls -ACF'
 alias eman='env LANG=C LC_ALL=C man'
 
 # rbenv$
-eval "$(rbenv init -)"$
+eval "$(rbenv init -)"
 alias be='bundle exec'
 
 # パス設定

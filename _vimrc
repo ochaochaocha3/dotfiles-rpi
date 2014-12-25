@@ -11,8 +11,15 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc', {
+  \ 'build' : {
+  \     'windows' : 'make -f make_mingw32.mak',
+  \     'cygwin' : 'make -f make_cygwin.mak',
+  \     'mac' : 'make -f make_mac.mak',
+  \     'unix' : 'make -f make_unix.mak',
+  \    },
+  \ }
+
 NeoBundle 'sudo.vim'
 NeoBundle 'vim-jp/vimdoc-ja'
 
@@ -50,13 +57,17 @@ NeoBundleCheck
 
 " ここまで：neobundle.vim によるプラグイン管理
 
-" タブ・インデント
+" マウスを有効にする
+set mouse=a
+
+" 編集
 set tabstop=4
 set softtabstop=2
 set shiftwidth=2
 set expandtab
 set autoindent
 set smartindent
+set backspace=indent,eol,start
 
 " 表示
 set wrap
