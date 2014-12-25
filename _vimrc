@@ -21,6 +21,10 @@ NeoBundle 'Shougo/vimproc', {
   \ }
 
 NeoBundle 'sudo.vim'
+
+" 日本語ドキュメント
+" インストールしても表示できない場合は以下を実行する
+" :helptags ~/.vim/bundle/vimdoc-ja/doc
 NeoBundle 'vim-jp/vimdoc-ja'
 
 NeoBundle 'bling/vim-airline'
